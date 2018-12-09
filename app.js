@@ -1,5 +1,6 @@
 const express = require('express');
 const authRoutes = require('./routes/auth-routes');
+const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth',authRoutes);
+app.use('/profile',profileRoutes);
 
 app.listen(3000, () => {
     console.log('app now listening for requests on port 3000');
