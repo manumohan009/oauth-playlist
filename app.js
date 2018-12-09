@@ -18,7 +18,7 @@ app.use(cookieSession({
 
 // initialize passport
 app.use(passport.initialize());
-app.use(package.session());
+app.use(passport.session());
 
 // connect to mongodb
 mongoose.connect(keys.mongodb.dbURI, () => {
